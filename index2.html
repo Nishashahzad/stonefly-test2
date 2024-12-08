@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container holding both sidebar and main content */
+        .container {
+            display: flex;
+            width: 90%;
+            height: 90%;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 240px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Logo styling */
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        
+
+.logo-container {
+    margin-left: 30px;
+    border: 1px solid white;
+    width: 70px;
+    padding: 20px;
+    border-radius: 100%;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+
+        .logo h2 {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Sidebar Navigation */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            margin-bottom: 2px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+
+        nav ul li.active > a {
+            background-color: #1abc9c;
+        }
+
+        nav ul li ul {
+            padding-left: 20px;
+            margin-top: 1px;
+        }
+
+        nav ul li ul li a {
+            font-size: 12px;
+        }
+
+        /* Main content area */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header of the main content */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .user-info h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .header-links a {
+            color: #3498db;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .header-links span {
+            color: #ccc;
+        }
+
+        /* Dashboard layout */
+        .dashboard {
+            margin-top: 30px;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            width: 30%;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: scale(1.05);
+        }
+
+        .info-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-card-header h4 {
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        .info-card-header span {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .progress-bars {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .progress-bar {
+            height: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cpu {
+            background-color: #3498db;
+        }
+
+        .memory {
+            background-color: #2ecc71;
+        }
+
+        .network-stats .stat {
+            margin-bottom: 10px;
+        }
+
+        .stat-bar {
+            height: 8px;
+            background-color: #3498db;
+            border-radius: 5px;
+        }
+
+        .quick-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .support-button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .support-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Table styles */
+        .resources table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        .resources th, .resources td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .resources th {
+            background-color: #ecf0f1;
+            font-weight: bold;
+        }
+
+        .resources td img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .resources td {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .resource-bar {
+            height: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: #0c9b07;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sc-details {
+            margin-top: 10px;
+        }
+
+        .open-btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .open-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="LOGONEW.svg" alt="Company Logo" class="logo">
+                </div>
+                <h2>SC-172-123-123-211</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li>
+                        <a href="#">SAN</a>
+                        <ul>
+                            <li><a href="#">Volume</a>
+                                <ul>
+                                    <li><a href="#">Create New Volume</a>
+                                        <ul>
+                                            <li><a href="#">Auto Create</a></li>
+                                            <li><a href="#">Manual Create</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Sessions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">NAS</a>
+                        <ul>
+                            <li><a href="#">Segments</a></li>
+                            <li><a href="#">Antivirus</a></li>
+                            <li><a href="#">Scalepoint</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Resources</a>
+                        <ul>
+                            <li><a href="#">Create Flash Cache</a></li>
+                            <li><a href="#">Create Object Storage</a></li>
+                            <li><a href="#">Detail</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">System</a>
+                        <ul>
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="#">Network</a></li>
+                            <li><a href="#">Diagnostics</a></li>
+                            <li><a href="#">Notifications</a></li>
+                            <li><a href="#">UPS</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Reports</a>
+                        <ul>
+                            <li><a href="#">Log</a></li>
+                            <li><a href="#">Configuration Report</a></li>
+                            <li><a href="#">Historical Statistics</a></li>
+                            <li><a href="#">Live Statistics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <h3>Welcome, Admin</h3>
+                    <p>Status: <strong>Good</strong></p>
+                </div>
+                <div class="header-links">
+                    <a href="#">Support</a>
+                    <span>|</span>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+
+            <section class="dashboard">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <h4>CPU & Memory</h4>
+                            <span>Usage</span>
+                        </div>
+                        <div class="progress-bars">
+                            <div class="progress-bar cpu" style="width: 25%;">CPU: 25%</div>
+                            <div class="progress-bar memory" style="width: 60%;">Memory: 60%</div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <h4>Network Utilization</h4>
+                            <span>Mbps</span>
+                        </div>
+                        <div class="network-stats">
+                            <div class="stat">
+                                <p>Read: 0.06</p>
+                                <div class="stat-bar" style="width: 30%;"></div>
+                            </div>
+                            <div class="stat">
+                                <p>Sent: 0.05</p>
+                                <div class="stat-bar" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <h4>Concentrator Type</h4>
+                            <span>Info</span>
+                        </div>
+                        <div class="concentrator-details">
+                            <p>Name: SC-192-168-10-250</p>
+                            <p>IP: 192.168.10.250</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <h4>Discovered SC's</h4>
+                            <span>Click to View</span>
+                        </div>
+                        <div class="sc-details">
+                            <ul>
+                                <li>SC-192-168-10-200</li>
+                                <li>SC-192-168-10-250</li>
+                            </ul>
+                            <button class="open-btn">Open</button>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="resources">
+                    <h4>Resources</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Path</th>
+                                <th>Total Space (GB)</th>
+                                <th>Used (GB)</th>
+                                <th>Free (GB)</th>
+                                <th>Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="placeholder.png" alt="Resource Image"></td>
+                                <td>Resource 1</td>
+                                <td>/path/to/resource</td>
+                                <td>100</td>
+                                <td>80</td>
+                                <td>20</td>
+                                <td><div class="resource-bar" style="width: 80%;">80%</div></td>
+                            </tr>
+                            <tr>
+                                <td><img src="placeholder.png" alt="Resource Image"></td>
+                                <td>Resource 2</td>
+                                <td>/path/to/resource</td>
+                                <td>150</td>
+                                <td>120</td>
+                                <td>30</td>
+                                <td><div class="resource-bar" style="width: 90%;">90%</div></td>
+                            </tr>
+                            <tr>
+                                <td><img src="placeholder.png" alt="Resource Image"></td>
+                                <td>Resource 3</td>
+                                <td>/path/to/resource</td>
+                                <td>200</td>
+                                <td>150</td>
+                                <td>50</td>
+                                <td><div class="resource-bar" style="width: 75%;">75%</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
