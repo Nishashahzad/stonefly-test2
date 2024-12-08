@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="LOGONEW.svg" type="image/x-icon">
+    <title>STONEFLY</title>
+</head>
+
+<body>
+    <header id="hero">
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="LOGONEW.svg" alt="Company Logo" class="logo">
+            </div>
+            <div class="navbar-links">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#">SAN</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Volume</a>
+                                <ul>
+                                    <li><a href="#">Auto Create</a></li>
+                                    <li><a href="#">Manual Create</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Host</a></li>
+                            <li><a href="#">Sessions</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a href="#">Target Portal</a></li>
+                    <li class="nav-item"><a href="#">NAS</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Segments</a></li>
+                            <li><a href="#">Antivirus</a></li>
+                            <li><a href="#">Scaleout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#">Resources</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Create Flash Cache</a></li>
+                            <li><a href="#">Flash Cache Configuration</a></li>
+                            <li><a href="#">Create Object Storage</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#">System</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="#">Network</a></li>
+                            <li><a href="#">Diagnostics</a></li>
+                            <li><a href="#">Notifications</a></li>
+                            <li><a href="#">UPS</a></li>
+                            <li><a href="#">Users</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#">Reports</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Log</a></li>
+                            <li><a href="#">Configuration Report</a></li>
+                            <li><a href="#">Historical Statistics</a></li>
+                            <li><a href="#">Debug Logs</a></li>
+                            <li><a href="#">Live Statistics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="main-content">
+        <!-- Main Content -->
+        <div class="dashboard">
+            <h2>Dashboard</h2>
+            <hr>
+        </div>
+        <div class="col">
+        <div class="information">
+            <h3>Information <b>></b></h3>
+            <div class="icon">
+                <i class="fa-brands fa-hive"></i>
+                <div>
+                    <h4>ISCSI SAN IP:</h4>
+                    <p>192.168.10.255</p>
+                </div>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-figma"></i>
+                <div>
+                    <h4>NAS LAN IP:</h4>
+                    <p>192.168.10.255</p>
+                </div>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-squarespace"></i>
+                <div>
+                    <h4>ISCSI LAN IP:</h4>
+                    <p>192.168.10.255</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="triangle">
+            <div class="cp pc">
+                <h3>CPU & MEMORY</h3>
+                <img src="cpu-memory.png" alt="CPU and Memory Utilization">
+            </div>
+            <div class="container--2">
+                <div class="vertical-line"></div>
+            </div>
+            <div class="cp">
+                <h3>Network Utilization</h3>
+                <img src="network.png" alt="Network Utilization">
+            </div>
+        </div>
+        </div>
+
+        <div class="boxes">
+            <div class="box">
+                <div>
+                    <h6>Concentrator type</h6>
+                    <p>Name: SC-192-168-10-250</p>
+                    <p>MGMT: 192.168.10.250</p>
+                    <p>ISCSI IP: 192.168.10.250</p>
+                </div>
+                <img src="SYSTEM.png" alt="system">
+            </div>
+            <div class="box">
+                <div>
+                    <h6>Quick Links</h6>
+                    <h4>Customer Support</h4>
+                </div>
+                <img src="customer-support.png" alt="customer support">
+            </div>
+            <div class="box">
+                <div>
+                    <h6>Discovered SC's</h6>
+                    <p>SC-192-168-10-250</p>
+                    <p>SC-192-168-10-250</p>
+                    <button>Open</button>
+                </div>
+                <img src="SC.png" alt="SC">
+            </div>
+        </div>
+
+        <div class="Resources">
+            <div>
+                <h3>Resources</h3>
+            </div>
+            <div class="boxes-2">
+                <div class="box-2">
+                    <div class="border">
+                        <i class="fa-regular fa-square useed"></i>
+                    </div>
+                    <p>Used</p>
+                </div>
+                <div class="box-2">
+                    <div class="border2">
+                        <i class="fa-regular fa-square Available"></i>
+                    </div>
+                    <p>Available</p>
+                </div>
+                <div class="box-2">
+                    <div class="border3">
+                        <i class="fa-regular fa-square not-manage"></i>
+                    </div>
+                    <p>Not Managed</p>
+                </div>
+            </div>
+        </div>
+
+        <table class="storage-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Path</th>
+                    <th>Total Space (GB)</th>
+                    <th>Used (GB)</th>
+                    <th>Free (GB)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="image1.jpg" alt="image1" width="50" height="50"></td>
+                    <td>Image 1</td>
+                    <td>/path/to/image1</td>
+                    <td>100 GB</td>
+                    <td>91 GB</td>
+                    <td>9 GB</td>
+                </tr>
+                <tr class="progress-row">
+                    <td colspan="6">
+                        <div class="progress-bar">
+                            <div class="used" style="width: 91%;">91%</div>
+                            <div class="free" style="width: 9%;">9%</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="image2.jpg" alt="image2" width="50" height="50"></td>
+                    <td>Image 2</td>
+                    <td>/path/to/image2</td>
+                    <td>100 GB</td>
+                    <td>64 GB</td>
+                    <td>36 GB</td>
+                </tr>
+                <tr class="progress-row">
+                    <td colspan="6">
+                        <div class="progress-bar">
+                            <div class="used" style="width: 64%;">64%</div>
+                            <div class="free" style="width: 36%;">36%</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="image3.jpg" alt="image3" width="50" height="50"></td>
+                    <td>Image 3</td>
+                    <td>/path/to/image3</td>
+                    <td>100 GB</td>
+                    <td>91 GB</td>
+                    <td>9 GB</td>
+                </tr>
+                <tr class="progress-row">
+                    <td colspan="6">
+                        <div class="progress-bar">
+                            <div class="used" style="width: 91%;">91%</div>
+                            <div class="free" style="width: 9%;">9%</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

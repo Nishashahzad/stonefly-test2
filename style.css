@@ -1,0 +1,383 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f6f9 0%, #ffffff 100%);
+    color: #333;
+    font-size: 16px;
+}
+
+/* Hero Navigation Bar */
+#hero {
+    background: #2980b9;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.logo-container {
+    border: 1px solid white;
+    padding: 14px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.navbar .logo-container img {
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo-container img:hover {
+    transform: scale(1.1);
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links .nav-item {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-links .nav-item a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar-links .nav-item:hover {
+    color: #f39c12;
+}
+
+/* Dropdown Styles */
+.navbar-links .nav-item .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links .nav-item:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-links .dropdown li {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.navbar-links .dropdown li a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.navbar-links .dropdown li:hover {
+    background-color: #2980b9;
+}
+
+.navbar-links .dropdown li a:hover {
+    color: white;
+}
+
+/* Sub Dropdown (sublist inside dropdown) */
+.navbar-links .dropdown li ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #ecf0f1;
+    width: 200px;
+    display: none;
+    z-index: 2;
+}
+
+.navbar-links .dropdown li:hover > ul {
+    display: block;
+}
+
+.navbar-links .dropdown li ul li {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.navbar-links .dropdown li ul li a {
+    color: #3498db;
+}
+
+/* Main Content Section */
+#main-content {
+    padding: 30px 40px;
+}
+
+.dashboard {
+    padding: 30px;
+    color: rgb(0, 0, 0);
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.information {
+    margin-bottom: 30px;
+}
+
+.information h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icon i {
+    font-size: 30px;
+    color: #2980b9;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.icon i:hover {
+    color: #f39c12;
+}
+
+.icon div h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.icon div p {
+    font-size: 14px;
+    color: #777;
+}
+
+.triangle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: fit-content;
+}
+
+.cp {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 90px;
+}
+
+.cp h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cp img {
+    width: 200px;
+}
+
+.container--2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.vertical-line {
+    height: 100%;
+    width: 10px;
+    background-color: #000000;
+}
+
+/* Boxes */
+.boxes {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    background-color: #3a4247;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-basis: 30%;
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box h6, .box h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.box img {
+    width: 70px;
+    margin-top: 20px;
+}
+
+.box button {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* Resources */
+.Resources {
+    height: fit-content;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.boxes-2 {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.box-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.box-2 .useed, .box-2 .Available, .box-2 .not-manage {
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.box-2 .useed {
+    border: 1px solid #0554e8;
+    color: #0554e8;
+    background-color: #0554e8;
+}
+
+.box-2 .Available {
+    border: 1px solid #0f9fa9;
+    color: #0eafba;
+    background-color: #0f9fa9;
+}
+
+.box-2 .not-manage {
+    border: 1px solid #035a60;
+    color: #035a60;
+    background-color: #035a60;
+}
+
+/* Table */
+.storage-table {
+    width: 100%;
+    margin-top: 40px;
+    border-collapse: collapse;
+}
+
+.storage-table th, .storage-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.storage-table th {
+    background-color: #2980b9;
+    color: white;
+}
+
+.storage-table td {
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+.storage-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.storage-table td img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.progress-bar {
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progress-bar .used {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.progress-bar .free {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
